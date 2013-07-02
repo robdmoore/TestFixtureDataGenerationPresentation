@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestFixtureDataPresentation.Implementation.Models.Campaign">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <Members>
+      <Method Name="Campaign" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAkAAAAAEAAAAAAAEAAAAA=</HashCode>
+      <FileName>Implementation\Models\Campaign.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Demographic" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TestFixtureDataPresentation.Implementation.Models.Demographic">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <Members>
+      <Property Name="AllMembers" Hidden="true" />
+      <Method Name="Demographic" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAgAgAAAAAAABAAQAAA=</HashCode>
+      <FileName>Implementation\Models\Demographic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestFixtureDataPresentation.Implementation.Models.Member">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <Members>
+      <Method Name="Member" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAQACAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Implementation\Models\Member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestFixtureDataPresentation.Implementation.Models.Product">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_campaigns" Hidden="true" />
+      <Method Name="Product" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Campaigns" Type="TestFixtureDataPresentation.Implementation.Models.Campaign" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="1.375" />
+        <Point X="2.083" Y="1.375" />
+        <Point X="2.083" Y="3.938" />
+        <Point X="3.25" Y="3.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAQAAAEAABAAAAAAAAQAAAA=</HashCode>
+      <FileName>Implementation\Models\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LatestCampaign" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Campaigns" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
