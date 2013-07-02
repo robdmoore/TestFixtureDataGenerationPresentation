@@ -4,11 +4,11 @@ using NUnit.Framework;
 using TestFixtureDataPresentation.Implementation.Models;
 using TestFixtureDataPresentation.Implementation.Queries;
 
-namespace TestFixtureDataPresentation.Tests._01_NewingUp
+namespace TestFixtureDataPresentation.Tests._02_ObjectMother
 {
     class GetProductsForMemberTests : QueryTestBase
     {
-        private readonly Member _member = new Member("Name", State.Wa, new DateTime(1970, 1, 1));
+        private readonly Member _member = ObjectMother.Members.Fred;
         private readonly DateTime _now = DateTime.UtcNow;
 
         [Test]
@@ -24,12 +24,10 @@ namespace TestFixtureDataPresentation.Tests._01_NewingUp
         {
             var products = new[]
             {
-                new Product("Product with no campaign"),
-                new Product("Campaign that hasn't started"),
-                new Product("Campaign that has ended")
+                ObjectMother.Products.NoCampaign,
+                ObjectMother.Products.NotStarted(_now),
+                ObjectMother.Products.Ended(_now)
             };
-            products[1].CreateCampaign(_now, Demographic.AllMembers, _now.AddDays(1), _now.AddDays(2));
-            products[2].CreateCampaign(_now, Demographic.AllMembers, _now.AddDays(-2), _now.AddDays(-1));
             products.ToList().ForEach(p => Session.Save(p));
 
             var result = Execute(new GetProductsForMember(_now, _member));
@@ -40,16 +38,13 @@ namespace TestFixtureDataPresentation.Tests._01_NewingUp
         [Test]
         public void GivenProductsWithCurrentCampaignWithSomeThatApplyToTheMember_WhenQuerying_ThenReturnTheProductsThatApplyToTheMember()
         {
-            var member = new Member("Name", State.Wa, _now.AddYears(-10).AddDays(-1));
+            var member = ObjectMother.Members.InWaWithAge(10, _now);
             var products = new[]
             {
-                new Product("Product 1 (applies)"),
-                new Product("Product 2 (doesn't apply)"),
-                new Product("Product 3 (applies)")
+                ObjectMother.Products.CurrentForAllMembers(_now),
+                ObjectMother.Products.CurrentForAllActMembers(_now),
+                ObjectMother.Products.CurrentForWaMembersBetween9And11YearsOld(_now)
             };
-            products[0].CreateCampaign(_now, Demographic.AllMembers, _now.AddDays(-1), _now.AddDays(1));
-            products[1].CreateCampaign(_now, new Demographic(State.Act, null, null), _now.AddDays(-1), _now.AddDays(1));
-            products[2].CreateCampaign(_now, new Demographic(State.Wa, 9, 11), _now.AddDays(-1), _now.AddDays(1));
             products.ToList().ForEach(p => Session.Save(p));
 
             var result = Execute(new GetProductsForMember(_now, member));

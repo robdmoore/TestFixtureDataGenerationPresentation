@@ -35,6 +35,12 @@
     <Reference Include="FizzWare.NBuilder">
       <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
     </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\packages\NSubstitute.1.6.1.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="NTestDataBuilder">
+      <HintPath>..\packages\NTestDataBuilder.0.1.13\lib\NET40\NTestDataBuilder.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -60,7 +66,10 @@
     <Compile Include="Tests\01_NewingUp\DemographicTests.cs" />
     <Compile Include="Tests\01_NewingUp\GetProductsForMemberTests.cs" />
     <Compile Include="Tests\02_ObjectMother\DemographicTests.cs" />
+    <Compile Include="Tests\02_ObjectMother\GetProductsForMemberTests.cs" />
     <Compile Include="Tests\02_ObjectMother\ObjectMother.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\DemographicBuilder.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\MemberBuilder.cs" />
     <Compile Include="Tests\QueryTestBase.cs" />
   </ItemGroup>
   <ItemGroup />

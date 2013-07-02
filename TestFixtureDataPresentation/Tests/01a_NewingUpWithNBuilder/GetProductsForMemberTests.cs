@@ -10,7 +10,7 @@ namespace TestFixtureDataPresentation.Tests._01a_NewingUpWithNBuilder
     class GetProductsForMemberTests : QueryTestBase
     {
         private readonly Member _member = new Member("Name", State.Wa, new DateTime(1970, 1, 1));
-        private DateTime _now = DateTime.UtcNow;
+        private readonly DateTime _now = DateTime.UtcNow;
 
         [Test]
         public void GivenProductsWithNoCampaignOrACampaignThatIsntCurrent_WhenQuerying_ThenReturnNoResults()
