@@ -59,6 +59,8 @@
     <Compile Include="Tests\01a_NewingUpWithNBuilder\GetProductsForMemberTests.cs" />
     <Compile Include="Tests\01_NewingUp\DemographicTests.cs" />
     <Compile Include="Tests\01_NewingUp\GetProductsForMemberTests.cs" />
+    <Compile Include="Tests\02_ObjectMother\DemographicTests.cs" />
+    <Compile Include="Tests\02_ObjectMother\ObjectMother.cs" />
     <Compile Include="Tests\QueryTestBase.cs" />
   </ItemGroup>
   <ItemGroup />
