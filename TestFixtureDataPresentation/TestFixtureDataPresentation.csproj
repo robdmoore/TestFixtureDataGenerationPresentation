@@ -81,6 +81,15 @@
     <Compile Include="Tests\04_TestDataBuilderWithNBuilder\Builders\MemberBuilder.cs" />
     <Compile Include="Tests\04_TestDataBuilderWithNBuilder\Builders\ProductBuilder.cs" />
     <Compile Include="Tests\04_TestDataBuilderWithNBuilder\GetProductsForMemberTests.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\Builders\CampaignBuilder.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\Builders\DemographicBuilder.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\Builders\MemberBuilder.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\Builders\ProductBuilder.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\DemographicTests.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\GetProductsForMemberTests.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\ObjectMothers\Demographics.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\ObjectMothers\Members.cs" />
+    <Compile Include="Tests\05_TestDataBuilderAndObjectMother\ObjectMothers\Campaigns.cs" />
     <Compile Include="Tests\QueryTestBase.cs" />
   </ItemGroup>
   <ItemGroup />
