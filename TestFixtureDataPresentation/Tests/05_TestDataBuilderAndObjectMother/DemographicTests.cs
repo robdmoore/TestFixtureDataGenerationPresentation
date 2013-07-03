@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using TestFixtureDataPresentation.Implementation.Models;
-using TestFixtureDataPresentation.Tests._05_TestDataBuilderAndObjectMother.Builders;
 using TestFixtureDataPresentation.Tests._05_TestDataBuilderAndObjectMother.ObjectMothers;
 
 namespace TestFixtureDataPresentation.Tests._05_TestDataBuilderAndObjectMother
@@ -85,7 +84,7 @@ namespace TestFixtureDataPresentation.Tests._05_TestDataBuilderAndObjectMother
 
             var applies = demographic.Contains(member, now);
 
-            Assert.That(applies, Is.EqualTo(state == demographic.State && (age >= demographic.MinimumAge && age <= demographic.MaximumAge)));
+            Assert.That(applies, Is.EqualTo(state == State.Wa && (age == 18 && age == 19)));
         }
     }
 }
