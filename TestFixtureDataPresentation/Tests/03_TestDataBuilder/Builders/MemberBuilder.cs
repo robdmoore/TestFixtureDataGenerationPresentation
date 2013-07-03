@@ -2,7 +2,7 @@
 using NTestDataBuilder;
 using TestFixtureDataPresentation.Implementation.Models;
 
-namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder
+namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder.Builders
 {
     class MemberBuilder : TestDataBuilder<Member, MemberBuilder>
     {
@@ -11,6 +11,24 @@ namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder
             Set(x => x.Name, "Fred");
             Set(x => x.State, State.Wa);
             Set(x => x.Dob, new DateTime(1970, 1, 1));
+        }
+
+        public MemberBuilder InState(State state)
+        {
+            Set(x => x.State, state);
+            return this;
+        }
+
+        public MemberBuilder WithDateOfBirth(DateTime dob)
+        {
+            Set(x => x.Dob, dob);
+            return this;
+        }
+
+        public MemberBuilder WithAge(int age, DateTime now)
+        {
+            Set(x => x.Dob, now.AddYears(-age));
+            return this;
         }
 
         protected override Member BuildObject()

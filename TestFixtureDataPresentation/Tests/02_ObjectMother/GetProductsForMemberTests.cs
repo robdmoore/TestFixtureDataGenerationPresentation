@@ -3,6 +3,7 @@ using System.Linq;
 using NUnit.Framework;
 using TestFixtureDataPresentation.Implementation.Models;
 using TestFixtureDataPresentation.Implementation.Queries;
+using TestFixtureDataPresentation.Tests._02_ObjectMother.ObjectMothers;
 
 namespace TestFixtureDataPresentation.Tests._02_ObjectMother
 {

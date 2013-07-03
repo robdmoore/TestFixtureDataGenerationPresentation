@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using TestFixtureDataPresentation.Implementation.Models;
-using TestFixtureDataPresentation.Tests._02_ObjectMother.ObjectMothers;
+using TestFixtureDataPresentation.Tests._03_TestDataBuilder.Builders;
 
-namespace TestFixtureDataPresentation.Tests._02_ObjectMother
+namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder
 {
     class DemographicTests
     {
@@ -17,8 +17,8 @@ namespace TestFixtureDataPresentation.Tests._02_ObjectMother
         [Test]
         public void GivenDemographicForAllMembers_WhenCheckingIfTheDemographicAppliesToAMember_ThenReturnTrue()
         {
-            var member = ObjectMother.Members.Fred;
-            var demographic = ObjectMother.Demographics.AllMembers;
+            var member = new MemberBuilder().Build();
+            var demographic = new DemographicBuilder().ForAllMembers().Build();
 
             var applies = demographic.Contains(member, DateTime.UtcNow);
 
@@ -30,8 +30,8 @@ namespace TestFixtureDataPresentation.Tests._02_ObjectMother
         public void GivenDemographicForAnyAgeAndSpecificState_WhenCheckingIfTheDemographicAppliesToAMember_ThenReturnTrueOnlyIfMemberIsInThatState
             ([ValueSource("AllStates")] State memberState, [ValueSource("AllStates")] State demographicState)
         {
-            var member = ObjectMother.Members.ForState(memberState);
-            var demographic = ObjectMother.Demographics.ForState(demographicState);
+            var member = new MemberBuilder().InState(memberState).Build();
+            var demographic = new DemographicBuilder().ForState(demographicState).Build();
 
             var applies = demographic.Contains(member, DateTime.UtcNow);
 
@@ -44,8 +44,8 @@ namespace TestFixtureDataPresentation.Tests._02_ObjectMother
             ([Range(1, 25)] int memberAge, [Range(1, 25)] int minimumAge)
         {
             var now = DateTime.UtcNow;
-            var member = ObjectMother.Members.WithDateOfBirth(now.AddYears(-(memberAge + 1)).AddSeconds(1));
-            var demographic = ObjectMother.Demographics.WithMinimumAge(minimumAge);
+            var member = new MemberBuilder().WithDateOfBirth(now.AddYears(-(memberAge + 1)).AddSeconds(1)).Build();
+            var demographic = new DemographicBuilder().WithMinimumAge(minimumAge).Build();
 
             var applies = demographic.Contains(member, now);
 
@@ -58,8 +58,8 @@ namespace TestFixtureDataPresentation.Tests._02_ObjectMother
             ([Range(1, 25)] int memberAge, [Range(1, 25)] int maximumAge)
         {
             var now = DateTime.UtcNow;
-            var member = ObjectMother.Members.WithAge(memberAge, now);
-            var demographic = ObjectMother.Demographics.WithMaximumAge(maximumAge);
+            var member = new MemberBuilder().WithAge(memberAge, now).Build();
+            var demographic = new DemographicBuilder().WithMaximumAge(maximumAge).Build();
 
             var applies = demographic.Contains(member, now);
 
@@ -72,8 +72,15 @@ namespace TestFixtureDataPresentation.Tests._02_ObjectMother
             ([Range(1, 25)] int age, [ValueSource("AllStates")] State state)
         {
             var now = DateTime.UtcNow;
-            var member = new Member("Name", state, now.AddYears(-age));
-            var demographic = ObjectMother.Demographics.WithStateAndAgeRange;
+            var member = new MemberBuilder()
+                .InState(state)
+                .WithAge(age, now)
+                .Build();
+            var demographic = new DemographicBuilder()
+                .ForState(State.Wa)
+                .WithMinimumAge(18)
+                .WithMaximumAge(19)
+                .Build();
 
             var applies = demographic.Contains(member, now);
 

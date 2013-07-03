@@ -67,9 +67,15 @@
     <Compile Include="Tests\01_NewingUp\GetProductsForMemberTests.cs" />
     <Compile Include="Tests\02_ObjectMother\DemographicTests.cs" />
     <Compile Include="Tests\02_ObjectMother\GetProductsForMemberTests.cs" />
-    <Compile Include="Tests\02_ObjectMother\ObjectMother.cs" />
-    <Compile Include="Tests\03_TestDataBuilder\DemographicBuilder.cs" />
-    <Compile Include="Tests\03_TestDataBuilder\MemberBuilder.cs" />
+    <Compile Include="Tests\02_ObjectMother\ObjectMothers\Demographics.cs" />
+    <Compile Include="Tests\02_ObjectMother\ObjectMothers\Members.cs" />
+    <Compile Include="Tests\02_ObjectMother\ObjectMothers\Products.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\Builders\CampaignBuilder.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\Builders\DemographicBuilder.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\DemographicTests.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\GetProductsForMemberTests.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\Builders\MemberBuilder.cs" />
+    <Compile Include="Tests\03_TestDataBuilder\Builders\ProductBuilder.cs" />
     <Compile Include="Tests\QueryTestBase.cs" />
   </ItemGroup>
   <ItemGroup />

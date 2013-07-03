@@ -25,7 +25,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TestFixtureDataPresentation.Implementation.Models.Member">
-    <Position X="9" Y="3.25" Width="1.5" />
+    <Position X="6.5" Y="0.75" Width="1.5" />
     <Members>
       <Method Name="Member" Hidden="true" />
     </Members>
