@@ -2,7 +2,7 @@
 using NTestDataBuilder;
 using TestFixtureDataPresentation.Implementation.Models;
 
-namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder.Builders
+namespace TestFixtureDataPresentation.Tests._04_TestDataBuilder.BuildersWithNBuilder
 {
     class CampaignBuilder : TestDataBuilder<Campaign, CampaignBuilder>
     {

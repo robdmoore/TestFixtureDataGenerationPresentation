@@ -48,23 +48,21 @@ namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder
             {
                 new ProductBuilder().WithName("1").WithCampaign(_now,
                     new CampaignBuilder()
-                        .WithDemographic(new DemographicBuilder().ForAllMembers())
+                        .ForAllMembers()
                         .StartingAt(_now.AddDays(-1))
                         .EndingAt(_now.AddDays(1))
                 ).Build(),
                 new ProductBuilder().WithName("2").WithCampaign(_now,
                     new CampaignBuilder()
-                        .WithDemographic(new DemographicBuilder().ForState(State.Act))
+                        .ForState(State.Act)
                         .StartingAt(_now.AddDays(-1))
                         .EndingAt(_now.AddDays(1))
                 ).Build(),
                 new ProductBuilder().WithName("2").WithCampaign(_now,
                     new CampaignBuilder()
-                        .WithDemographic(new DemographicBuilder()
-                            .ForState(State.Wa)
-                            .WithMinimumAge(9)
-                            .WithMaximumAge(11)
-                        )
+                        .ForState(State.Wa)
+                        .WithMinimumAge(9)
+                        .WithMaximumAge(11)
                         .StartingAt(_now.AddDays(-1))
                         .EndingAt(_now.AddDays(1))
                 ).Build()

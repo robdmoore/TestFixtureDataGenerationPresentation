@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using FizzWare.NBuilder;
 using NTestDataBuilder;
 using TestFixtureDataPresentation.Implementation.Models;
 
-namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder.Builders
+namespace TestFixtureDataPresentation.Tests._04_TestDataBuilder.BuildersWithNBuilder
 {
+    static class ProductBuilderExtensions
+    {
+        public static IList<Product> BuildList(this IOperable<ProductBuilder> list)
+        {
+            return list.BuildList<Product, ProductBuilder>();
+        }
+    }
+
     class ProductBuilder : TestDataBuilder<Product, ProductBuilder>
     {
         List<Tuple<DateTime, Campaign>> _campaigns = new List<Tuple<DateTime, Campaign>>();

@@ -76,6 +76,11 @@
     <Compile Include="Tests\03_TestDataBuilder\GetProductsForMemberTests.cs" />
     <Compile Include="Tests\03_TestDataBuilder\Builders\MemberBuilder.cs" />
     <Compile Include="Tests\03_TestDataBuilder\Builders\ProductBuilder.cs" />
+    <Compile Include="Tests\04_TestDataBuilderWithNBuilder\Builders\CampaignBuilder.cs" />
+    <Compile Include="Tests\04_TestDataBuilderWithNBuilder\Builders\DemographicBuilder.cs" />
+    <Compile Include="Tests\04_TestDataBuilderWithNBuilder\Builders\MemberBuilder.cs" />
+    <Compile Include="Tests\04_TestDataBuilderWithNBuilder\Builders\ProductBuilder.cs" />
+    <Compile Include="Tests\04_TestDataBuilderWithNBuilder\GetProductsForMemberTests.cs" />
     <Compile Include="Tests\QueryTestBase.cs" />
   </ItemGroup>
   <ItemGroup />
