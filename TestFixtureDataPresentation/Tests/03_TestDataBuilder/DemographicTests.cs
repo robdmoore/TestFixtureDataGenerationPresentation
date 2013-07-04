@@ -84,7 +84,7 @@ namespace TestFixtureDataPresentation.Tests._03_TestDataBuilder
 
             var applies = demographic.Contains(member, now);
 
-            Assert.That(applies, Is.EqualTo(state == demographic.State && (age >= demographic.MinimumAge && age <= demographic.MaximumAge)));
+            Assert.That(applies, Is.EqualTo(state == State.Wa && (age >= 18 && age <= 19)));
         }
     }
 }
