@@ -31,6 +31,11 @@ namespace TestFixtureDataPresentation.Tests._02_ObjectMother.ObjectMothers
             {
                 return new Member("WA member", State.Wa, now.AddYears(-age));
             }
+
+            public static Member WithAgeAndState(int age, DateTime now, State state)
+            {
+                return new Member("A Member", state, now.AddYears(-age));
+            }
         }
     }
 }

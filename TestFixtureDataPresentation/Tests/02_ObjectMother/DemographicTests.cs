@@ -72,7 +72,7 @@ namespace TestFixtureDataPresentation.Tests._02_ObjectMother
             ([Range(1, 25)] int age, [ValueSource("AllStates")] State state)
         {
             var now = DateTime.UtcNow;
-            var member = new Member("Name", state, now.AddYears(-age));
+            var member = ObjectMother.Members.WithAgeAndState(age, now, state);
             var demographic = ObjectMother.Demographics.WithStateAndAgeRange;
 
             var applies = demographic.Contains(member, now);
