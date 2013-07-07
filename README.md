@@ -15,6 +15,8 @@ This presentation was first delivered to the [Perth .NET User Group](http://pert
 Notes
 -----
 
+* The theory behind the content presented here is explained in my [blog post](http://robdmoore.id.au/blog/2013/05/26/test-data-generation-the-right-way-object-mother-test-data-builders-nsubstitute-nbuilder/)
+* The library I used in this example is one I created; [NTestDataBuilder](https://github.com/robdmoore/NTestDataBuilder)
 * This is deliberately a fairly contrived example
 * There are some things in here that aren't practical in a production codebase and some things I wouldn't normally do
 * I've tried to get a balance between simplifying things to a point they are easily understandable at a glance, but complex enough that they give a good representation of what can happen in a representative codebase - if you have any suggestions of any improvements I can make please raise an issue
